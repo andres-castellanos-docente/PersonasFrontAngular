@@ -12,9 +12,14 @@ export class PersonasService {
   constructor( private http: HttpClient) {
   }
   path = '/personas';
+  pathfilt = '/personasporapellido/';
 
   listarPersonas(): Observable<any> {
     return this.http.get(environment.apiUrl + this.path, {});
+  }
+
+  listarPersonasxApell(primerApellido: string): Observable<any> {
+    return this.http.get(environment.apiUrl + this.pathfilt + primerApellido  , {});
   }
 
 }

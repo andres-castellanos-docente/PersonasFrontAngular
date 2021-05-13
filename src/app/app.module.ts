@@ -10,6 +10,11 @@ import {HttpClientModule} from '@angular/common/http';
 import {PersonasService} from './services/personas.service';
 import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import {MatButtonModule} from '@angular/material/button';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {MatTableExporterModule} from 'mat-table-exporter';
 
 @NgModule({
   declarations: [
@@ -23,7 +28,13 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     BrowserAnimationsModule,
     MatTableModule,
     MatPaginatorModule,
-    HttpClientModule
+    HttpClientModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatTableExporterModule
   ],
   providers: [PersonasService],
   bootstrap: [AppComponent]

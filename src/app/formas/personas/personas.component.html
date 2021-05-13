@@ -1,4 +1,14 @@
-<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+<form [formGroup]="personasForm" autocomplete="off">
+  <mat-form-field  class="example-full-width">
+    <mat-label>Primer Apellido</mat-label>
+    <input formControlName="primerApellido" matInput   placeholder="Primer Apellido">
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" (click)="filtarPersona()">Buscar</button>
+  <button mat-raised-button color="primary" [@derAIzAnimation]  *ngIf="filtrado" (click)="quitarFiltros()">Borrar Filtro</button>
+</form>
+<div  [@derAIzAnimation] >
+<table matTableExporter  mat-table [dataSource]="dataSource" #exporter="matTableExporter"  class="mat-elevation-z8">
 
 
   <ng-container matColumnDef="primernombre">
@@ -39,3 +49,16 @@
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 </table>
+</div>
+<mat-paginator class="matselect" [pageSizeOptions]="[5, 10, 20]"
+               showFirstLastButtons></mat-paginator>
+
+
+
+<button mat-raised-button color="primary" (click)="exporter.exportTable('xlsx',{fileName:'pasajeros_data'})"> <i class="fa fa-file-excel"></i>Excel</button>
+<button mat-raised-button color="primary" (click)="exporter.exportTable('csv',{fileName:'pasajeros_data'})">CSV</button>
+<button mat-raised-button color="primary" (click)="exporter.exportTable('json',{fileName:'pasajeros_data'})">JSON</button>
+<button mat-raised-button color="primary" (click)="exporter.exportTable('txt',{fileName:'pasajeros_data'})">TEXT</button>
+
+
+
