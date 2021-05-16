@@ -15,12 +15,15 @@ import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatTableExporterModule} from 'mat-table-exporter';
+import {MatDialogModule} from '@angular/material/dialog';
+import { DiagpersonasComponent } from './formas/personas/diagpersonas/diagpersonas.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PersonasComponent,
-    HomeComponent
+    HomeComponent,
+    DiagpersonasComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +37,8 @@ import {MatTableExporterModule} from 'mat-table-exporter';
     MatButtonModule,
     FormsModule,
     ReactiveFormsModule,
-    MatTableExporterModule
+    MatTableExporterModule,
+    MatDialogModule
   ],
   providers: [PersonasService],
   bootstrap: [AppComponent]

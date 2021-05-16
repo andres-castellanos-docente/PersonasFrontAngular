@@ -4,7 +4,7 @@ export class PersonasModel {
   segundnombre: string;
   primerapellido: string;
   segundoapellido: string;
-  ncelular: number;
+  celular: number;
   email: string;
 
   constructor(json: any = null) {
@@ -14,7 +14,7 @@ export class PersonasModel {
       this.segundnombre = json.segundnombre;
       this.primerapellido = json.primerapellido;
       this.segundoapellido = json.segundoapellido;
-      this.ncelular = json.ncelular;
+      this.celular = json.celular;
       this.email = json.email;
     } else {
       this.id = null;
@@ -22,7 +22,7 @@ export class PersonasModel {
       this.segundnombre = null;
       this.primerapellido = null;
       this.segundoapellido = null;
-      this.ncelular = null;
+      this.celular = null;
       this.email = null;
     }
   }

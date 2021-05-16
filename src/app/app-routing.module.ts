@@ -6,7 +6,7 @@ import {HomeComponent} from './formas/home/home.component';
 const routes: Routes = [
   {path: 'personas',  component: PersonasComponent, canActivate: []},
   {path: 'home',  component: HomeComponent, canActivate: []},
-  {path: '',  component: HomeComponent, canActivate: []}
+  {path: '',  component: PersonasComponent, canActivate: []}
 ];
 
 @NgModule({

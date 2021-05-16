@@ -7,3 +7,16 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .divtable {
   padding-top: 60px!important;
 }
+
+.flexcontent {
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+}
+.margright20 {
+  margin-right: 20px;
+}
+.mat-table-scroll {
+  width: 100%;
+  overflow: auto;
+}

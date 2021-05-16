@@ -1,0 +1,37 @@
+<h2 mat-dialog-title>Personas</h2>
+<mat-dialog-content class="mat-typography">
+  <form  [formGroup]="PersonasForm" autocomplete="off" >
+    <div mat-dialog-content>
+      <div class="flexcontent">
+        <mat-form-field class="margright20" appearance="fill" [ngClass]="{ 'ng-invalid mat-form-field-invalid':  PersonasForm.controls.primernombre.errors && PersonasSubmited }">
+          <mat-label>Primer Nombre</mat-label>
+          <input formControlName="primernombre" maxlength="80" type="text"  class="inputtext" matInput >
+        </mat-form-field>
+        <mat-form-field class="margright20" appearance="fill" [ngClass]="{ 'ng-invalid mat-form-field-invalid':  PersonasForm.controls.segundnombre.errors && PersonasSubmited }">
+          <mat-label>Segundo Nombre</mat-label>
+          <input formControlName="segundnombre" maxlength="80" type="text"  class="inputtext" matInput>
+        </mat-form-field>
+        <mat-form-field class="margright20" appearance="fill" [ngClass]="{ 'ng-invalid mat-form-field-invalid':  PersonasForm.controls.primerapellido.errors && PersonasSubmited }">
+          <mat-label>Primer Apellido</mat-label>
+          <input formControlName="primerapellido" maxlength="80" type="text"  class="inputtext" matInput>
+        </mat-form-field>
+        <mat-form-field class="margright20" appearance="fill"  [ngClass]="{ 'ng-invalid mat-form-field-invalid':  PersonasForm.controls.segundoapellido.errors && PersonasSubmited }">
+          <mat-label>Segundo Apellido</mat-label>
+          <input formControlName="segundoapellido" maxlength="80" type="text"  class="inputtext" matInput>
+        </mat-form-field>
+        <mat-form-field class="margright20" appearance="fill" [ngClass]="{ 'ng-invalid mat-form-field-invalid':  PersonasForm.controls.celular.errors && PersonasSubmited }">
+          <mat-label>N Celular</mat-label>
+          <input formControlName="celular" maxLength="10" oninput="this.value=this.value.slice(0,this.maxLength)" maxlength="10" type="number"  class="inputtext" matInput>
+        </mat-form-field>
+        <mat-form-field class="margright20" appearance="fill" [ngClass]="{ 'ng-invalid mat-form-field-invalid':  PersonasForm.controls.email.errors && PersonasSubmited }">
+          <mat-label>Email</mat-label>
+          <input formControlName="email" maxlength="200" type="text"  class="inputtext" matInput>
+        </mat-form-field>
+      </div>
+    </div>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button (click)="crear()">Guardar</button>
+  <button mat-button mat-dialog-close>Cancel</button>
+</mat-dialog-actions>

@@ -5,6 +5,8 @@ import {PersonasModel} from '../../models/personas.model';
 import {MatPaginator} from '@angular/material/paginator';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {derAIzAnimation} from '../../animaciones/listanim.animations';
+import {MatDialog} from '@angular/material/dialog';
+import {DiagpersonasComponent} from './diagpersonas/diagpersonas.component';
 
 @Component({
   selector: 'app-personas',
@@ -13,7 +15,7 @@ import {derAIzAnimation} from '../../animaciones/listanim.animations';
   animations: [derAIzAnimation]
 })
 export class PersonasComponent implements OnInit {
-  constructor(private personasService: PersonasService, private formBuilder: FormBuilder) {
+  constructor(private personasService: PersonasService, private formBuilder: FormBuilder, public dialog: MatDialog) {
 
 
   }
@@ -40,6 +42,14 @@ export class PersonasComponent implements OnInit {
      });*/
     this.personasForm = this.formBuilder.group({
       primerApellido: ['', [Validators.required]]
+    });
+  }
+
+  nuevaPersona(): void {
+    const dialogRef = this.dialog.open(DiagpersonasComponent, {
+      minWidth: '320px',
+      maxWidth: '720px',
+      data: {dataed: null}
     });
   }
 
