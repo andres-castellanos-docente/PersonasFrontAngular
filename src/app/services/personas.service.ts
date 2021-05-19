@@ -26,5 +26,11 @@ export class PersonasService {
   crearPersona(request: PersonasModel): Observable<any> {
     return this.http.post(environment.apiUrl + this.path, request, {});
   }
+  editarPersona(request: PersonasModel): Observable<any> {
+    return this.http.put(environment.apiUrl + this.path, request, {});
+  }
+  eliminarPersona(indexElim: number): Observable<any> {
+    return this.http.delete(environment.apiUrl + this.path + '/' + indexElim.toString(), {});
+  }
 
 }

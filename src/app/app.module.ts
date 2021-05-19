@@ -17,13 +17,17 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatTableExporterModule} from 'mat-table-exporter';
 import {MatDialogModule} from '@angular/material/dialog';
 import { DiagpersonasComponent } from './formas/personas/diagpersonas/diagpersonas.component';
+import { DiagmessagesComponent } from './formas/personas/diagmessages/diagmessages.component';
+import { DiagconfComponent } from './formas/personas/diagconf/diagconf.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PersonasComponent,
     HomeComponent,
-    DiagpersonasComponent
+    DiagpersonasComponent,
+    DiagmessagesComponent,
+    DiagconfComponent
   ],
   imports: [
     BrowserModule,
@@ -40,6 +44,7 @@ import { DiagpersonasComponent } from './formas/personas/diagpersonas/diagperson
     MatTableExporterModule,
     MatDialogModule
   ],
+    entryComponents: [DiagpersonasComponent, DiagmessagesComponent, DiagconfComponent],
   providers: [PersonasService],
   bootstrap: [AppComponent]
 })
